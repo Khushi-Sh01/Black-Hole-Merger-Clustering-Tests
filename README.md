@@ -25,10 +25,10 @@ Black holes can form through several different evolutionary pathways. For this p
 In real gravitational-wave catalogs, we do **not** know the true formation channel of each merger.So, this is naturally an **unsupervised learning** problem. The objective is to determine whether the merger population naturally separates into distinct clusters based only on their physical properties. Since the true formation history of real mergers is unknown, we just create a synthetic dataset.The data are generated from distributions representing the three formation channels above. Ground-truth labels are stored only for evaluation purposes and are never used during model training.
 
 ---
-
-# Machine Learning Pipeline
+## Machine Learning Pipeline
 
 We follow a simple workflow from data generation to final analysis. First, a synthetic dataset of black hole mergers is created, where each merger has physical properties such as mass, metallicity, and redshift. Since these features have different ranges of values, they are scaled using **StandardScaler** so that each feature contributes equally during clustering. Next, **Principal Component Analysis (PCA)** is used to reduce the data to two dimensions, making it easier to visualize the merger population. The clustering algorithms **K-Means** and **DBSCAN** are then applied to the scaled data to group similar mergers together without using the true formation channel labels. At last, the quality of the clusters is measured using the **Adjusted Rand Index (ARI)** and **Silhouette Score** and different plots are generated to help understand how well the machine learning algorithms separate the different black hole merger populations.
+
 ---
 
 1. StandardScaler: The three features have very different numerical ranges. Example:Mass:5 – 150|Metallicity:0 – 1|Redshift:
