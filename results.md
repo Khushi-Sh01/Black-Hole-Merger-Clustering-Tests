@@ -6,6 +6,7 @@ K-Means was trained with **K = 3**, since the synthetic dataset was generated fr
 
 ## DBSCAN Results
 DBSCAN identified **11 clusters** and classified **573 mergers (47.8%)** as noise points. It achieved an **Adjusted Rand Index (ARI) of 0.304**, which is much lower than K-Means. This suggests that the chosen DBSCAN parameters (`eps` and `min_samples`) were not well suited for this dataset. Since the simulated merger populations have different densities and some overlap in feature space, DBSCAN split the data into many small clusters instead of recovering the three main populations.We can try parameter tuning here.
+
 ---
 
 **K-Means performs better than DBSCAN** for this synthetic black hole merger dataset. Because the simulated formation channels occupy relatively distinct regions in the feature space, a centroid-based algorithm like K-Means is able to identify them accurately. The physical parameters used in this project provide strong information for distinguishing the three formation channels just based on distance approach. Pop III remnants are characterized by high masses, extremely low metallicity, and large redshifts, making them easier to separate from the other populations. Field binaries occupy the low-mass, high-metallicity region, while globular cluster mergers lie between these two populations.
